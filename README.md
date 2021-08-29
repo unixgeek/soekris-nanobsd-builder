@@ -1,2 +1,1 @@
-VAGRANT_EXPERIMENTAL="1"
-$Env
+https://github.com/sprotheroe/vagrant-disksize
