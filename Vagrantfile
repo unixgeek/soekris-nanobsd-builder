@@ -6,7 +6,9 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "file", source: "net5501", destination: "/home/vagrant/net5501"
 
-  config.vm.provision "shell", path: "build-nanobsd.sh"
+  config.vm.provision "file", source: "build-nanobsd.sh", destination: "/home/vagrant/build-nanobsd.sh"
+
+  config.vm.provision "shell", path: "setup-environment.sh"
 
   config.disksize.size = "20GB"
 
