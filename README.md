@@ -16,6 +16,6 @@ This project uses Vagrant to provide a repeatable build process that builds Nano
        sh ./build-nanobsd.sh
 3. Copy image to the Soekris device.
 
-       cat /usr/obj/nanobsd.net5501/image.partition | ssh root@net5501 "sh /root/update"
+       cat /usr/obj/nanobsd.net5501/_.disk.image | ssh root@net5501 "sh /root/update"
 
 4. Reboot Soekris device.
