@@ -9,3 +9,11 @@ env PAGER=cat freebsd-update --not-running-from-cron fetch
 if freebsd-update updatesready; then
     freebsd-update install
 fi;
+
+portsnap fetch
+portsnap extract
+
+# maybe move this
+cd /usr/ports/net/aquantia-atlantic-kmod
+make package
+cp work/pkg/aquantia-atlantic-kmod-*.pkg /vagrant
