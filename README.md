@@ -13,7 +13,7 @@ This project uses Vagrant to provide a repeatable build process that builds Nano
 2. Build the NanoBSD image.
 
        vagrant ssh
-       sh ./build-nanobsd.sh
+       ./build-nanobsd.sh
 3. Copy image to the Soekris device.
 
        cat /usr/obj/nanobsd.net5501/_.disk.image | ssh root@net5501 "sh /root/update"

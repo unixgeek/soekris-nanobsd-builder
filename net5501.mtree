@@ -1,0 +1,38 @@
+#	   user: gunter
+#	machine: gunter-Legion-S7-15ACH6
+#	   tree: /home/gunter/IdeaProjects/soekris-nanobsd-builder/net5501
+#	   date: Sat Aug 13 14:31:23 2022
+
+# .
+/set type=file
+.               type=dir
+    NET5501     cksum=4166861261
+    NET5501.hints \
+                cksum=1825386160
+    net5501.cfg cksum=2794590850
+
+# ./files
+files           type=dir
+
+# ./files/cfg
+cfg             type=dir
+    rc.conf     cksum=3167922079
+# ./files/cfg
+..
+
+
+# ./files/root
+root            type=dir
+    boot.config cksum=677828906
+    fstab       cksum=410543247
+    loader.conf cksum=1154049586
+    newsyslog.conf \
+                cksum=2129488966
+    syslog.conf cksum=1570736027
+    ttys        cksum=3471531673
+# ./files/root
+..
+
+# ./files
+..
+
