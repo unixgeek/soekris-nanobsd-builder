@@ -49,7 +49,6 @@ device		uart			# Generic UART driver
 # Pseudo devices.
 device		crypto			# core crypto support
 device		loop			# Network loopback
-device		random			# Entropy device
 device		ether			# Ethernet support
 device		md			# Memory "disks"
 device		bpf
