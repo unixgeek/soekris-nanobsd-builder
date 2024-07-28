@@ -2,12 +2,12 @@
 
 # The share that gets setup automatically at /vagrant does not work consistently, so we use sync folders instead.
 # The sync folder is the same mechanism, but somehow fails less often. Seems to be an issue with the vboxvfs driver.
-if ! mtree -f /vagrant/net5501.mtree -p /home/vagrant/net5501; then
-  echo "Retrying mount..."
-  sudo umount /home/vagrant/net5501
-  sudo mount -t vboxvfs home_vagrant_net5501 /home/vagrant/net5501
-  mtree -f /vagrant/net5501.mtree -p /home/vagrant/net5501
-fi
+#if ! mtree -f /vagrant/net5501.mtree -p /home/vagrant/net5501; then
+#  echo "Retrying mount..."
+#  sudo umount /home/vagrant/net5501
+#  sudo mount -t vboxvfs home_vagrant_net5501 /home/vagrant/net5501
+#  mtree -f /vagrant/net5501.mtree -p /home/vagrant/net5501
+#fi
 
 # Link kernel config.
 sudo ln -s /home/vagrant/net5501/NET5501       /usr/src/sys/i386/conf/NET5501
