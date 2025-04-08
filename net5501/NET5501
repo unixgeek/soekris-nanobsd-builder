@@ -53,3 +53,5 @@ device		ether			# Ethernet support
 device		md			# Memory "disks"
 device		bpf
 device		vr
+
+device      if_bridge

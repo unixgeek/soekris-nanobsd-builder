@@ -5,8 +5,8 @@ Vagrant.configure("2") do |config|
   # The FreeBSD image updates at startup, so allow for more time.
   config.vm.boot_timeout = 600
 
-  # vboxvfs SUCKS
-#   config.vm.synced_folder "net5501", "/home/vagrant/net5501"
+  # Does not work reliably.
+  config.vm.synced_folder ".", "/vagrant", disabled: true
 
   config.vm.provision "file", source: "net5501", destination: "/home/vagrant/net5501"
   config.vm.provision "file", source: "build-nanobsd.sh", destination: "/home/vagrant/build-nanobsd.sh"
