@@ -1,6 +1,5 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "freebsd/FreeBSD-13.3-RELEASE"
-  config.vm.box_version = "2024.03.02"
+  config.vm.box = "freebsd/FreeBSD-14.2-RELEASE"
 
   # The FreeBSD image updates at startup, so allow for more time.
   config.vm.boot_timeout = 600

@@ -16,7 +16,7 @@ This project uses Vagrant to provide a repeatable build process that builds Nano
        ./build-nanobsd.sh
 3. Copy image to the Soekris device.
 
-       cat /usr/obj/nanobsd.net5501/_.disk.image | ssh root@net5501 "sh /root/update"
+       dd if=/usr/obj/nanobsd.net5501/_.disk.image | ssh root@net5501 "sh /root/update"
 
 4. Reboot Soekris device.
 
@@ -26,6 +26,13 @@ Reminder to self on how to skim over changes outside of release notes.
 * Check source code.
 
       git clone https://github.com/freebsd/freebsd-src
-      git diff release/12.3.0..release/13.0.0 share/man/man5/src.conf.5
-      git diff release/12.3.0..release/13.0.0 tools/tools/nanobsd
-      git diff release/12.3.0..release/13.1.0 sys/i386/conf/GENERIC
+      CURRENT=13.3.0
+      NEXT=13.4.0
+      git diff release/${CURRENT}..release/${NEXT} share/man/man5/src.conf.5
+      git diff release/${CURRENT}..release/${NEXT} tools/tools/nanobsd
+      git diff release/${CURRENT}..release/${NEXT} sys/i386/conf/GENERIC
+      grep '^.It Va WITH' /usr/src/share/man/man5/src.conf.5 | sed 's/^\.It Va //' | sort | uniq
+
+## Open Items
+* watchdog
+* gpio

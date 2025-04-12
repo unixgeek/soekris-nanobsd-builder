@@ -28,7 +28,6 @@ options		TMPFS
 device		pci
 #device		eisa
 device 		cbb
-device		pccard
 device		cardbus
 
 device		miibus
@@ -38,16 +37,27 @@ device		nsphyter
 device		scbus
 device		ata
 
-# Doesn't compile on 8? Pretty sure I saw this in dmesg on an 8 image...
-#device		sio
-#device		puc
+device      isa
+device      glxiic
+device      iicbus
+
+# GPIO
+#device      iicbb
+#device      gpio
+#device      gpioiic
+#device      gpioled
 
 device 		da
 
 device		uart			# Generic UART driver
 
+device      usb
+device      ohci
+device      ehci
+
 # Pseudo devices.
 device		crypto			# core crypto support
+device      glxsb
 device		loop			# Network loopback
 device		ether			# Ethernet support
 device		md			# Memory "disks"
